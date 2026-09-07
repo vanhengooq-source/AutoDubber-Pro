@@ -103,7 +103,7 @@ if uploaded_file is not None:
                 video_duration = video.duration
                 video.audio.write_audiofile(TEMP_AUDIO, logger=None)
                 
-                model = whisper.load_model("base")
+                model = whisper.load_model("tiny")
                 result = model.transcribe(TEMP_AUDIO, fp16=False)
                 segments = result['segments']
                 
