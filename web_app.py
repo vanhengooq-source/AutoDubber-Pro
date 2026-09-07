@@ -104,7 +104,7 @@ if uploaded_file is not None:
                 video.audio.write_audiofile(TEMP_AUDIO, logger=None)
                 
                 model = whisper.load_model("base")
-                result = model.transcribe(TEMP_AUDIO)
+                result = model.transcribe(TEMP_AUDIO, fp16=False)
                 segments = result['segments']
                 
                 log_box.info(f"២. រកឃើញការសន្ទនា {len(segments)} ប្រយោគ! កំពុងរៀបចំ Audio Ducking...")
